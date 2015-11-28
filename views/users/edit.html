@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Utilisateur- Modification</title>
+    </head>
+    <body>
+        <form action="/users/"<%= user._id %>"edit" method="post" enctype='application/x-www-form-urlencoded'>
+            <p>Nom d'utilisateur: <input type="text" name="username" value=<%= user.username %> ></p>
+            <p>Mot de passe: <input type="password" name="password" value=<%= user.password %> ></p>
+            <p>Active :<input type="checkbox" name="active" checked=<%= user.active%> value="<%= user.active%>"></p>
+            <p><button type="submit">Mettre à jour</button></p> 
+        </form>
+    </body>
+</html>
