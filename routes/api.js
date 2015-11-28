@@ -12,5 +12,6 @@ var userController = require(path.join(controllersPath, 'users'));
 router.get('/users', userController.all);
 router.get('/users/:username', userController.exists);
 router.get('/users/:userId/show', userController.show);
+router.post('/users/new', userController.create);
 
 module.exports = router;
