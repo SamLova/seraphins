@@ -1,13 +1,13 @@
 /* global __dirname */
 
-var express = require('express');
-var path = require('path');
-var favicon = require('static-favicon');
-var fs = require('fs');
-// var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-//    user = require('./models/users');
+var express = require('express'),
+    path = require('path'),
+    favicon = require('static-favicon'),
+    fs = require('fs'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    config = config = require('./lib/config/config');
 
 // Bootstrap models
 var modelsPath = path.join(__dirname, 'lib/models');
@@ -15,8 +15,7 @@ fs.readdirSync(modelsPath).forEach(function (file) {
   require(modelsPath + '/' + file);
 });
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+// var routes = require('./routes/index');
 
 var app = express();
 
@@ -25,19 +24,16 @@ var db = require('./lib/db/mongo').db;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 app.use(favicon());
-// app.use(logger('dev'));
+app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
@@ -70,5 +66,7 @@ app.use(function(err, req, res, next) {
     });
 });
 
-
+//routes should be at the last
+app.use(express.Router());
+require('./lib/config/routes')(app);
 module.exports = app;
