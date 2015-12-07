@@ -18,6 +18,7 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var api = require('./routes/api');
+var partial = require('./routes/partial');
 
 var app = express();
 
@@ -34,12 +35,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+//JS
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 app.use('/', routes);
 app.use('/users', users);
 app.use('/api', api);
+app.use('/partial', partial);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

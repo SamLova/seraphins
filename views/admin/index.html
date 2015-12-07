@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>Administration</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>Admin</div>
-    </body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Administrateurs</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/Style2.css">
+</head>
+<body ng-app="tabs">
+        <nav>
+            <ul>
+                <li><a href="#/users"><span class="glyphicon glyphicon-user icon"></span>Utilisateurs</a>
+                    <ul><li><a href="#/users/new"><span class="glyphicon glyphicon-plus icon"></span>Ajouter</a></li></ul>
+                </li>
+                <li><a href="#"><span class="glyphicon glyphicon-stats icon"></span>Statistiques</a></li>
+            </ul>
+        </nav>
+    <div class="container">
+        <div ng-view></div>
+    </div>
+    <script type="text/javascript" src="/javascripts/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+    <script type="text/javascript" src="/javascripts/angular.min.js"></script>
+    <script type="text/javascript" src="/javascripts/angular-route.js"></script>
+    <script type="text/javascript" src="/javascripts/service.js"></script>
+    <script type="text/javascript" src="/javascripts/app/app.js"></script>
+</body>
 </html>

@@ -1,0 +1,54 @@
+div#container{
+	padding: 0px 10px 0px 10px;
+}
+td{
+	padding:5px;
+}
+.right{
+	text-align: right;
+}
+nav ul li{
+	display: inline-block;
+	list-style: none;
+	border-right: 1px #337ab7 solid;
+	padding:0px 15px 0px 15px;
+}
+nav ul li:hover > ul{
+	display: block;
+}
+nav ul ul li{
+	position:relative;
+}
+nav ul{
+	background-color: #eee;
+	padding: 15px;
+}
+nav ul ul{
+	position: absolute;
+
+}
+nav ul li:last-child{
+	border-right: none;
+}
+nav ul li a:hover{
+	text-decoration: none;
+}
+nav ul li a{
+	color:#8A6D3B;
+	padding: 15px;
+}
+nav ul li a:focus{
+	text-decoration: none;
+	color:#8A6D3B;
+}
+.icon{
+	margin:0px 5px 0px 0px;
+}
+nav ul li ul{
+	background-color: #eee;
+	padding: 10px 6px 10px 6px;
+    display: none;
+    margin-top: 14px;
+    border-top: 1px solid #DADADA;
+    border-bottom: 1px solid #DADADA;
+}

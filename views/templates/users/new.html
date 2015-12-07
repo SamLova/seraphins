@@ -1,0 +1,49 @@
+<form>
+    <fieldset>
+        <legend>
+            Ajout d'un utilisateur
+        </legend>
+            <table>
+                <tr>
+                    <td class="right"><b>Nom</b></td>
+                    <td><input type="text" class="form-control" placeholder="Nom..." ng-model="nom"/></td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Pr&eacute;nom</b></td>
+                    <td><input type="text" class="form-control" placeholder="Prénom..." ng-model="prenom"/></td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Nom d'utilisateur</b></td>
+                    <td><input type="text" class="form-control" placeholder="Nom d'utilisateur..." ng-model="login"/></td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Email</b></td>
+                    <td><input type="email" class="form-control" placeholder="Email..." ng-model="email"/></td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Rôle</b></td>
+                    <td>
+                    <select class="form-control">
+                        <option value="0">Veuillez sélectionner...</option>
+                        <option value="1">Direction</option>
+                        <option value="2">Chef d'établissement</option>
+                        <option value="3">Econome</option>
+                        <option value="4">Titulaire</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Mot de Passe</b></td>
+                    <td><input type="password" class="form-control" placeholder="Mot de Passe..." ng-model="mdp"/></td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Confirmez mot de passe</b></td>
+                    <td><input type="password" class="form-control" placeholder="Confirmez Mot de Passe..." ng-model="mdpConf"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Enregistrer" class="btn btn-default"/></td>
+                </tr>
+            </table>
+    </fieldset>
+</form>
